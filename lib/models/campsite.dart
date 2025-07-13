@@ -35,6 +35,8 @@ class Campsite {
     final lat = latRaw / 10000;
     final lng = lngRaw / 10000;
 
+    String photo = (json['photo'] as String? ?? '').replaceFirst('http:', 'https:');
+
     return Campsite(
       id:               json['id']             as String?  ?? '',
       label:            json['label']          as String?  ?? 'No name',
@@ -45,7 +47,7 @@ class Campsite {
       campFireAllowed:  json['isCampFireAllowed']as bool?    ?? false,
       hostLanguages:     json['hostLanguages']   as List<dynamic>,
       pricePerNight:    (json['pricePerNight'] as num?)    ?.toDouble() ?? 0.0,
-      photo:            json['photo']          as String?  ?? '',
+      photo:            photo,
     );
   }
 }
