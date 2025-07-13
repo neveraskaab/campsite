@@ -1,4 +1,6 @@
+import 'package:campsite/utils/european_format.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../models/campsite.dart';
 
 class CampsiteListItem extends StatelessWidget {
@@ -6,10 +8,13 @@ class CampsiteListItem extends StatelessWidget {
   final VoidCallback onTap;
 
   const CampsiteListItem({
-    Key? key,
+    super.key,
     required this.campsite,
     required this.onTap,
-  }) : super(key: key);
+  });
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -67,9 +72,17 @@ class CampsiteListItem extends StatelessWidget {
                         style: textTheme.bodyMedium,
                       ),
                       Spacer(),
-                      Text(
-                        '€${campsite.pricePerNight.toStringAsFixed(2)}/Night',
-                        style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Text(
+                            '€${campsite.pricePerNight.toEuropeanCurrency()}/ ',
+                            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Night',
+                            style: TextStyle(fontSize: 18,fontWeight: FontWeight.normal),
+                          ),
+                        ],
                       ),
                     ],
                   ),

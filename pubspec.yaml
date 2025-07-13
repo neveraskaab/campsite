@@ -19,6 +19,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   shared_preferences:
   flutter_localized_locales:
+  intl:
 
 dev_dependencies:
   flutter_test:
@@ -28,4 +29,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/pp.jpeg
 

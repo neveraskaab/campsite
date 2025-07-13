@@ -1,3 +1,4 @@
+import 'package:campsite/utils/european_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -115,9 +116,7 @@ class _DetailViewState extends State<DetailView> {
             child: Row(children: [
               CircleAvatar(
                 radius: 28,
-                backgroundImage: NetworkImage(
-                  'https://i.pravatar.cc/150?u=${widget.campsite.id}',
-                ),
+                backgroundImage: AssetImage("assets/pp.jpeg"),
               ),
               const SizedBox(width: 12),
               Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -199,7 +198,7 @@ class _DetailViewState extends State<DetailView> {
         ),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text(
-            '€${widget.campsite.pricePerNight.toStringAsFixed(2)}/Night',
+            '€${widget.campsite.pricePerNight.toEuropeanCurrency()}/ Night',
             style: theme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           ElevatedButton(

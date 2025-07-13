@@ -59,10 +59,7 @@ class FiltersSection extends ConsumerWidget {
               'Price range',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
             ),
-
-
             const SizedBox(height: 16),
-
             Center(
               child: SizedBox(
                 height: 48,
@@ -133,7 +130,7 @@ class FiltersSection extends ConsumerWidget {
               'Amenities',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 12),
             Wrap(
               spacing: 8,
               children: [
@@ -168,7 +165,7 @@ class FiltersSection extends ConsumerWidget {
               'Favorites',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 12),
             FilterChip(
               showCheckmark: false,
               avatar: const Icon(Icons.favorite),

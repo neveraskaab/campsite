@@ -67,7 +67,7 @@ final filteredCampsites = Provider<List<Campsite>>((ref) {
   }).toList();
 });
 
-///  Holds the user’s filter choices
+///  Holds the user’s filter  choices
 final filterProvider = StateProvider<FilterState>((_) => FilterState());
 
 
