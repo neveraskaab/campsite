@@ -32,8 +32,8 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config neveraskaab github-actions
+          git config ahmetabesli@gmail.com github-actions@github.com
           git add docs
           git commit -m "Automated build to docs folder" || echo "No changes to commit"
           git push
